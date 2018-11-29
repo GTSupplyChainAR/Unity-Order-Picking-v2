@@ -1,2 +1,2 @@
-# Unity-Order-Packing-v2
-A second version of HoloLens Order Packing Code.
+# Unity-Order-Picking-v2
+A second version of HoloLens Order Picking Code.
