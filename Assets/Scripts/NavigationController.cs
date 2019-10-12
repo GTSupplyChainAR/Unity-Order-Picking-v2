@@ -38,6 +38,7 @@ public class NavigationController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Console.WriteLine("NavigationController Starting");
         // data model init
         pr = new PathReader(Path.Combine(Application.streamingAssetsPath, "pick-paths.json"));
         pr.setPathId(selectedPathId);
@@ -61,6 +62,8 @@ public class NavigationController : MonoBehaviour {
 
     }
     private void postdata() {
+        Console.WriteLine("NavigationController PostingData");
+
         WWWForm form = new WWWForm();
         form.AddField("userId", selectedUserId);
         form.AddField("phase", selectedPhase);

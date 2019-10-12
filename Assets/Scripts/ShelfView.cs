@@ -28,6 +28,7 @@ public class ShelfView : MonoBehaviour
     };
     public void init()
     {
+        Console.WriteLine("ShelfView Init");
         //Debug.Log("Init");
         highlight_row = -1;
         highlight_col = -1;
@@ -110,6 +111,7 @@ public class ShelfView : MonoBehaviour
     }
     void Start()
     {
+        Console.WriteLine("SelfView.cs Starting");
         
         //init();
     }
@@ -117,6 +119,7 @@ public class ShelfView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Console.WriteLine("Updating");
 
     }
 
