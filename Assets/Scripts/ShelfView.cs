@@ -86,6 +86,8 @@ public class ShelfView : MonoBehaviour
     public void highlightBlock(BookWithLocation bookInfo)
     {
         string tag = bookInfo.book.tag;
+        Debug.Log("Shelf Tag: " + tag);
+        tag = "A-1-2-B";
         string[] loc = tag.Split('-');
 
         int row_id = row[loc[0]];

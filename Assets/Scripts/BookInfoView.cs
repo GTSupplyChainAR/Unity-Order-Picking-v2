@@ -57,6 +57,8 @@ public class BookInfoView : MonoBehaviour
         }
 
         //Highlight new block
+        tag = "A-1-2-B";
+        Debug.Log("Tag: " + tag);
         string[] loc = tag.Split('-');
 
         /*
@@ -67,6 +69,10 @@ public class BookInfoView : MonoBehaviour
         4 -> 2
         5 -> 1
         */
+        foreach (KeyValuePair<string, int> item in row)
+        {
+            Debug.Log("Key: " + item.Key + " | Value: " + item.Value);
+        }
         int val = int.Parse(loc[2]);
         val = Math.Abs(val - 5) + 1;
         loc[2] = val.ToString();
