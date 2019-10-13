@@ -26,7 +26,7 @@ public class NavigationController : MonoBehaviour
     public int[,] mergeArr = new int[4, 15];
     public int positionRound = 0; //0-4 keep track of how many positions the user has done
     public int placeRound = 0;
-    public String device = "Magic Leap";
+    public String device = "Hololens";
 
 
     private Dictionary<int, string> record_posted_book;
@@ -66,13 +66,8 @@ public class NavigationController : MonoBehaviour
     private OrderPickingMode currentMode;
 
     // Use this for initialization
-<<<<<<< Updated upstream
-    void Start () {
-        Console.WriteLine("NavigationController Starting");
-=======
     void Start()
     {
->>>>>>> Stashed changes
         // data model init
         pr = new PathReader(Path.Combine(Application.streamingAssetsPath, "pick-paths.json"));
         record_posted_book = new Dictionary<int, string>();
@@ -220,10 +215,6 @@ public class NavigationController : MonoBehaviour
                 break;
         }
     }
-<<<<<<< Updated upstream
-    private void postdata() {
-        Console.WriteLine("NavigationController PostingData");
-=======
 
     private void OnTriggerDown(byte controller_id, float intensity)
     {
@@ -268,7 +259,6 @@ public class NavigationController : MonoBehaviour
         }*/
 
         savedata();
->>>>>>> Stashed changes
 
         WWWForm form = new WWWForm();
         form.AddField("userId", selectedUserId);
