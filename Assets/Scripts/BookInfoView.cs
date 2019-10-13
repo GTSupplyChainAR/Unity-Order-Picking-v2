@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
-using HoloToolkit.Unity.InputModule;
 
 public class BookInfoView : MonoBehaviour
 {
 
     private GameObject bookText;
     private GameObject book;
-    private int maxLineChars = 5;
+    private int maxLineChars = 25;
     private String[] words;
     String result = "";
     private int charCount;
     private int shelfHighlightNumber;
     private int highlight_row;
+    private int highlight_col;
     private Dictionary<string, int> row;
 
     // Use this for initialization
-    public void init() {
+    public void init()
+    {
         row = new Dictionary<string, int>();
-        row.Add("A", 0);
-        row.Add("B", 1);
-        row.Add("C", 2);
-        row.Add("D", 3);
-        row.Add("E", 4);
-        row.Add("F", 5);
+        row.Add("1", 0);
+        row.Add("2", 1);
+        row.Add("3", 2);
+        row.Add("4", 3);
+        row.Add("5", 4);
         highlight_row = -1;
         bookText = GameObject.Find("Book Text");
     }
-   
+
     // Use this for highlighting book
     public void highlightBookInfo(BookWithLocation bookInfo)
     {
         highlightRow(bookInfo.book.tag);
         highlightBook(bookInfo);
     }
-    private void highlightBook(BookWithLocation bookInfo) {
+    private void highlightBook(BookWithLocation bookInfo)
+    {
         TextMesh bookInfoText = bookText.GetComponent<TextMesh>();
         bookInfoText.text = "Title: ";
         wrapText(bookInfo.book.title);
@@ -51,31 +51,45 @@ public class BookInfoView : MonoBehaviour
         String objectID;
         if (highlight_row != -1)
         {
-            objectID = "row_" + highlight_row + "_block";
-            Sprite greenBlock = Resources.Load<Sprite>("green_block");
+            objectID = "row_" + highlight_col + "_" + highlight_row + "_block";
+            Sprite greenBlock = Resources.Load<Sprite>("gray_block");
             GameObject.Find(objectID).GetComponent<SpriteRenderer>().sprite = greenBlock;
         }
 
         //Highlight new block
         string[] loc = tag.Split('-');
-        highlight_row = row[loc[3]];
-        objectID = "row_" + highlight_row + "_block";
+
+        /*
+        Invert values:
+        1 -> 5
+        2 -> 4
+        3 -> 3
+        4 -> 2
+        5 -> 1
+        */
+        int val = int.Parse(loc[2]);
+        val = Math.Abs(val - 5) + 1;
+        loc[2] = val.ToString();
+
+        highlight_row = row[loc[2]];
+        highlight_col = row[loc[1]];
+        objectID = "row_" + highlight_col + "_" + highlight_row + "_block";
         Sprite redBlock = Resources.Load<Sprite>("red_block");
         GameObject.Find(objectID).GetComponent<SpriteRenderer>().sprite = redBlock;
-        GameObject.Find("shelf_number_text").GetComponent<TextMesh>().text = loc[3];
+        GameObject.Find("shelf_number_text").GetComponent<TextMesh>().text = loc[2];
     }
- 
 
-    void Start()
+
+    void Awake()
     {
         init();
     }
     void Update()
     {
-        
+
     }
 
- 
+
 
     private void wrapText(String text)
     {
