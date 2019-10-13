@@ -38,7 +38,7 @@ public class NavigationController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Console.WriteLine("NavigationController Starting");
+        Debug.Log("Navigation Controller Starting");
         // data model init
         pr = new PathReader(Path.Combine(Application.streamingAssetsPath, "pick-paths.json"));
         pr.setPathId(selectedPathId);
@@ -62,7 +62,7 @@ public class NavigationController : MonoBehaviour {
 
     }
     private void postdata() {
-        Console.WriteLine("NavigationController PostingData");
+        Debug.Log("NavigationController PostingData");
 
         WWWForm form = new WWWForm();
         form.AddField("userId", selectedUserId);
@@ -97,6 +97,7 @@ public class NavigationController : MonoBehaviour {
     }
     int x = 0;
     private void userSelectionControl() {
+        Debug.Log("User Selection Encountered");
         //Debug.Log("V " + Input.GetAxis("Vertical"));
         //Debug.Log("H " + Input.GetAxis("Horizontal"));
         /*
@@ -125,6 +126,7 @@ public class NavigationController : MonoBehaviour {
                 phaseSelectionView.SetActive(true);
                 // clear next selection
                 selectedPhase = 0;
+                Debug.Log("Going to Next Phase : " + selectedPhase);
                 phaseSelectionView.GetComponent<PhaseSelectionView>().setPhase(selectedPhase);
                 currentActiveView = phaseSelectionView;
             
@@ -139,18 +141,22 @@ public class NavigationController : MonoBehaviour {
         //if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick2Button1))
         if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Joystick2Button1))
         {
+            Debug.Log("Selecting Testing");
             phaseSelectionView.GetComponent<PhaseSelectionView>().selectTesting();
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Joystick2Button2))
         {
+            Debug.Log("Selecting Training");
             phaseSelectionView.GetComponent<PhaseSelectionView>().selectTraining();
         }
         else if (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Joystick2Button3))
         {
+            
             selectedPhase = phaseSelectionView.GetComponent<PhaseSelectionView>().getSelectedPhase();
             currentActiveView.SetActive(false);
             pathIdSelectionView.SetActive(true);
             currentActiveView = pathIdSelectionView;
+            Debug.Log("Selecting Phase: " + selectedPhase);
             // setup next selection
             pathIdSelectionView.GetComponent<PathIdSelectionView>().setPhase(selectedPhase);
         }
@@ -166,10 +172,12 @@ public class NavigationController : MonoBehaviour {
     private void pathIdSelectionControl() {
         if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Joystick2Button1))
         {
+            Debug.Log("Selecting Next Path");
             pathIdSelectionView.GetComponent<PathIdSelectionView>().selectNext();
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Joystick2Button2))
         {
+            Debug.Log("Selecting Previous Path");
             pathIdSelectionView.GetComponent<PathIdSelectionView>().selectLast();
         }
         else if (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Joystick2Button3)) {

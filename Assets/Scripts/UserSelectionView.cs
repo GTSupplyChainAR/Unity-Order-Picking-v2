@@ -55,6 +55,7 @@ public class UserSelectionView : MonoBehaviour {
         if (selected_user_index - sliding_window_left >= window_size) {
             sliding_window_left++;
         }
+        Debug.Log("Selected Next User");
         refreshView();
     }
     public void selectLast() {
@@ -65,6 +66,7 @@ public class UserSelectionView : MonoBehaviour {
         if (selected_user_index < sliding_window_left) {
             sliding_window_left = selected_user_index;
         }
+        Debug.Log("Selected Previous User");
         refreshView();
     }
     public int getSelectedUserId() {
@@ -72,6 +74,7 @@ public class UserSelectionView : MonoBehaviour {
     }
 	void Start () {
         Console.WriteLine("UserSelection Start");
+        Debug.Log("User Selection Started");
         init();
         character_width = GameObject.Find("prompt").GetComponent<TextMesh>().text.Length;
         refreshView();

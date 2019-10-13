@@ -16,7 +16,12 @@ public class PathIdSelectionView : MonoBehaviour {
     private void refreshView() {
         int count = 0;
         for (int i = sliding_window_left; i - sliding_window_left < window_size; i++) {
-            GameObject.Find("path_" + count).GetComponent<TextMesh>().text = "Path - " + i;
+            if (GameObject.Find("/PathId Selection View/path_" + count) == null)
+            {
+                Debug.Log("Unable to find: " + count);
+            }
+            Debug.Log(i + ": " + GameObject.Find("path_" + count).GetComponent<TextMesh>());
+            GameObject.Find("/PathId Selection View/path_" + count).GetComponent<TextMesh>().text = "Path - " + i;
             if (i == selected_pathid)
             {
                 GameObject.Find("path_" + count).GetComponent<TextMesh>().color = Color.blue;
