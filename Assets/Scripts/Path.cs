@@ -5,8 +5,15 @@ public class PathReader
 {
     private PickPaths paths;
     private PickPath[] patharr;
+    private int userId;
     private int pathId;
+    private string position;
+    private PickPath[,] ordered;
     private PickPath currentPath;
+    private ExperimentReader reader;
+    private Participant participant;
+    private int[,] merged = new int[4, 15];
+
     /*public PathReader(PickPaths paths) {
         if (this.paths == null) {
             throw new NullReferenceException("PickPaths cannot be set null");
@@ -14,7 +21,8 @@ public class PathReader
         this.paths = paths;
         patharr = paths.pickPaths;
     }*/
-    public PathReader(string filePath) {
+    public PathReader(string filePath)
+    {
         if (File.Exists(filePath))
         {
             string dataAsJSON = File.ReadAllText(filePath);
@@ -25,11 +33,57 @@ public class PathReader
         {
             throw new FileNotFoundException(filePath + " cannot be found.");
         }
+
+        reader = new ExperimentReader("experiments.json");
     }
-    public int getPathId() {
+
+    public int getUserId()
+    {
+        return userId;
+    }
+
+    public int getPathId()
+    {
         return pathId;
     }
-    public bool setPathId(int id) {
+
+    public int[,] getMergedArry()
+    {
+        return merged;
+    }
+
+    public void setUserId(int id)
+    {
+        userId = id;
+        participant = reader.participants.participants[userId];
+        //Debug.Log("P::" + participant);
+
+        // Merge corresponding (at each index; len = 4) training and testing arrays
+        for (int i = 0; i < 4; i++)
+        {
+            // Add training
+            for (int k = 0; k < 5; k++)
+            {
+                merged[i, k] = participant.trainingPathOrder[i].pathIds[k];
+                //Debug.Log("Path: " + participant.trainingPathOrder[i].pathIds[k]);
+            }
+
+            // Add testing
+            for (int k = 0; k < 5; k++)
+            {
+                merged[i, k + 10] = participant.testingPathOrder[i].pathIds[k];
+            }
+        }
+        //patharr = participant.trainingPathOrder[0].pathIds;
+    }
+
+    public void setPosition(string newPosition)
+    {
+        this.position = newPosition;
+    }
+
+    public bool setPathId(int id)
+    {
         if (id < 1 || id > patharr.Length)
         {
             return false;
@@ -43,22 +97,27 @@ public class PathReader
         return false;
     }
     // no starts from zero.
-    public BookWithLocation getBookWithLocation(int no) {
-        if (currentPath == null) {
+    public BookWithLocation getBookWithLocation(int no)
+    {
+        if (currentPath == null)
+        {
             return null;
         }
-        if (no < 0 || no >= currentPath.pickPathInformation.orderedBooksAndLocations.Length) {
+        if (no < 0 || no >= currentPath.pickPathInformation.orderedBooksAndLocations.Length)
+        {
             return null;
         }
         return currentPath.pickPathInformation.orderedBooksAndLocations[no];
     }
-    public void printBookWithLocation(BookWithLocation b) {
+    public void printBookWithLocation(BookWithLocation b)
+    {
         Debug.Log("================");
         Debug.Log("Title: " + b.book.title + ", author: " + b.book.author + ", tag: " + b.book.tag);
         Debug.Log("Location: " + b.location[0] + ", " + b.location[1]);
     }
 
-    public int getNumberOfBooksInPath() {
+    public int getNumberOfBooksInPath()
+    {
         return currentPath.pickPathInformation.orderedBooksAndLocations.Length;
     }
 
@@ -72,36 +131,91 @@ public class PickPaths
     public PickPath[] pickPaths;
 }
 [System.Serializable]
-public class PickPath {
+public class PickPath
+{
     public int pathId;
     public string pathType;
     public PickPathInformation pickPathInformation;
+
+    public override string ToString()
+    {
+        return "PickPath: {\n"
+            + "pathId = " + pathId.ToString() + "\n"
+            + "pathType = " + pathType + "\n"
+            + "pickPathInformation = " + pickPathInformation + "\n"
+            + "}";
+    }
 }
 [System.Serializable]
-public class PickPathInformation {
+public class PickPathInformation
+{
     public BookWithLocation[] unorderedBooksAndLocations;
-    public OrderedPickPath[] orderedPickPath;
     public BookWithLocation[] orderedBooksAndLocations;
+    public OrderedPickPath[] orderedPickPath;
+
+    public override string ToString()
+    {
+        return "PickPathInformation: {\n"
+            + "unorderedBooksAndLocations = " + unorderedBooksAndLocations.ToString() + "\n"
+            + "orderedBooksAndLocations = " + orderedBooksAndLocations.ToString() + "\n"
+            + "orderedPickPath = " + orderedPickPath.ToString() + "\n"
+            + "}";
+    }
 }
 
 [System.Serializable]
-public class OrderedPickPath {
+public class OrderedPickPath
+{
+    public int stepNumber;
     public int[][] cellByCellPathToTargetBookLocation;
     public BookWithLocation targetBookAndTargetBookLocation;
-    public int stepNumber;
+
+    public override string ToString()
+    {
+        return "OrderedPickPath: {\n"
+            + "stepNumber = " + stepNumber.ToString() + "\n"
+            + "targetBookAndTargetBookLocation = " + targetBookAndTargetBookLocation.ToString() + "\n"
+            + "}";
+    }
 }
 
 [System.Serializable]
-public class BookWithLocation {
+public class BookWithLocation
+{
     public Book book;
     public int[] location;
+
+    public override string ToString()
+    {
+        string locationStr = "[ ";
+        foreach (int loc in location)
+        {
+            locationStr += loc.ToString() + " ";
+        }
+        locationStr += " ]";
+        return "BookWithLocation: {\n"
+            + "book = " + book.ToString() + "\n"
+            + "location = " + locationStr + "\n"
+            + "}";
+    }
 }
+
 [System.Serializable]
 public class Book
 {
+    public string title;
     public string author;
     public string tag;
-    public string title;
+
+    public override string ToString()
+    {
+        return "TrainingPathOrder: {\n"
+            + "title = " + title + "\n"
+            + "author = " + author + "\n"
+            + "tag = " + tag + "\n"
+            + "}";
+    }
+
 }
 
 
