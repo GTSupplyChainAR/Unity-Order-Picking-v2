@@ -57,7 +57,7 @@ public class BookInfoView : MonoBehaviour
         }
 
         //Highlight new block
-        tag = "A-1-2-B";
+        //tag = "A-1-2-B";
         Debug.Log("Tag: " + tag);
         string[] loc = tag.Split('-');
 
