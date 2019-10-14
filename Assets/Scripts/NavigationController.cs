@@ -561,25 +561,32 @@ public class NavigationController : MonoBehaviour
         {
             setMode(OrderPickingMode.BookInfo);
             mergeArr = pr.getMergedArry();
-            //Debug.Log(placeRound);
+            Debug.Log("Place Round: " + placeRound);
 
             if (selectedPhase == 0)
             {
+                Debug.Log("0");
                 selectedPathId = mergeArr[0, placeRound - 1];
 
             }
             else if (selectedPhase == 1)
             {
+                Debug.Log("1");
                 selectedPathId = mergeArr[0, (placeRound - 1) + 10];
             }
 
             // setup the next view
             if (selectedPathId != pr.getPathId())
             {
+                Debug.Log("Not Equal");
+                Debug.Log("Selected Path Id: " + selectedPathId);
+                Debug.Log("PR Path: " + pr.getPathId());
                 pr.setPathId(selectedPathId);
                 selectedBookNum = 0;
                 record_posted_book.Clear();
             }
+
+            Debug.Log("Calling Method");
 
             bookInfoView.GetComponent<BookInfoView>().highlightBookInfo(pr.getBookWithLocation(selectedBookNum));
             selectedBookTag = "A-0-0";
