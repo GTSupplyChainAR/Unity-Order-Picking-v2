@@ -1,0 +1,664 @@
+{
+    "participants": [
+        {
+            "participantId": 1,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 2,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                }
+            ],            
+            "testingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 3,
+            "trainingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                }
+            ]            
+        },
+        {
+            "participantId": 4,
+            "trainingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                }
+            ]            
+        },
+        {
+            "participantId": 5,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 6,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                }
+            ]            
+        },
+        {
+            "participantId": 7,
+            "trainingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 8,
+            "trainingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 9,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 10,
+            "trainingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 11,
+            "trainingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                },
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                }
+            ]
+        },
+        {
+            "participantId": 12,
+            "trainingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        3, 4, 5, 2, 1
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        5, 4, 1, 2, 3
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        4, 2, 5, 1, 3
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        4, 5, 3, 2, 1
+                    ]
+                }
+            ],
+            "testingPathOrder": [
+                {
+                    "position": "right-center",
+                    "pathIds": [
+                        15, 14, 13, 11, 12
+                    ]
+                },
+                {
+                    "position": "bottom-center",
+                    "pathIds": [
+                        14, 13, 12, 11, 15
+                    ]
+                },
+                {
+                    "position": "center-center",
+                    "pathIds": [
+                        14, 12, 11, 13, 15
+                    ]
+                },
+                {
+                    "position": "bottom-right",
+                    "pathIds": [
+                        15, 11, 14, 13, 12
+                    ]
+                }
+            ]
+        }
+    ]
+}

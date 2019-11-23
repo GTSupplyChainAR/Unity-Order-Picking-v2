@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.Networking;
 using System;
 using System.Threading;
+
 //using System.Globalization;
 
 public class NavigationController : MonoBehaviour
@@ -413,7 +414,8 @@ public class NavigationController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Thread.Sleep(sleepTime);
+            // Thread.Sleep(sleepTime);
+            // System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(5));
             if (Input.GetKeyDown(KeyCode.H))
             {
                 userSelectionView.GetComponent<UserSelectionView>().selectNext();
@@ -421,7 +423,7 @@ public class NavigationController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
-            Thread.Sleep(sleepTime);
+            // Thread.Sleep(sleepTime);
             if (Input.GetKeyDown(KeyCode.F))
             {
                 userSelectionView.GetComponent<UserSelectionView>().selectLast();
@@ -429,7 +431,7 @@ public class NavigationController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.G))
         {
-            Thread.Sleep(sleepTime);
+            // Thread.Sleep(sleepTime);
             if (Input.GetKeyDown(KeyCode.G))
             {
                 selectedUserId = userSelectionView.GetComponent<UserSelectionView>().getSelectedUserId();
@@ -696,16 +698,16 @@ public class NavigationController : MonoBehaviour
         // get the book, send server data
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (selectedBookNum + 1 < pr.getNumberOfBooksInPath())
-            {
-                selectedBookNum++;
-                shelfView.GetComponent<ShelfView>().highlightBlock(pr.getBookWithLocation(selectedBookNum));
-            }
             if (!record_posted_book.ContainsKey(selectedBookNum))
             {
                 selectedBookTag = pr.getBookWithLocation(selectedBookNum).book.tag;
                 postdata();
                 record_posted_book.Add(selectedBookNum, "pick");
+            }
+            if (selectedBookNum + 1 < pr.getNumberOfBooksInPath())
+            {
+                selectedBookNum++;
+                shelfView.GetComponent<ShelfView>().highlightBlock(pr.getBookWithLocation(selectedBookNum));
             }
             if (record_posted_book.Count >= pr.getNumberOfBooksInPath())
             {

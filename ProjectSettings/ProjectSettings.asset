@@ -594,7 +594,7 @@ PlayerSettings:
   metroCertificateNotAfter: 00462cd0cd7cd501
   metroApplicationDescription: Template_3D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: OrderPickingHoloLens
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

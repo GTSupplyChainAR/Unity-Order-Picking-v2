@@ -69,10 +69,7 @@ public class BookInfoView : MonoBehaviour
         4 -> 2
         5 -> 1
         */
-        foreach (KeyValuePair<string, int> item in row)
-        {
-            Debug.Log("Key: " + item.Key + " | Value: " + item.Value);
-        }
+
         int val = int.Parse(loc[2]);
         val = Math.Abs(val - 5) + 1;
         loc[2] = val.ToString();

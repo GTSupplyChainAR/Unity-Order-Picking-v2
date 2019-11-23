@@ -71,7 +71,6 @@ public class UserSelectionView : MonoBehaviour {
         return selected_user_index;
     }
 	void Start () {
-        Console.WriteLine("UserSelection Start");
         init();
         character_width = GameObject.Find("prompt").GetComponent<TextMesh>().text.Length;
         refreshView();

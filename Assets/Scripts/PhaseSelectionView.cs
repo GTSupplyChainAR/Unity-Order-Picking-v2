@@ -35,7 +35,6 @@ public class PhaseSelectionView : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        Console.WriteLine("PhaseSelection Starting");
         selected_phase = 0;
         refreshView();
 
